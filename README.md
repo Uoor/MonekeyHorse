@@ -1,31 +1,21 @@
-# MonekeyHorse
+MonkeyHorse
 =====
 
 MonkeyHorse is a very simple and clean-design blog system implemented with Spring Boot.
-It's one of my learning projects to explore awesome features in Spring Boot web programming. I've put 
-
-it on production
-for my personal blog site [https://monkeyhorse.cn](https://monkeyhorse.cn---待上线).
+It's one of my learning projects to explore awesome features in Spring Boot web programming. I've put it on production
+for my personal blog site [https://monkeyhorse.cn](https://monkeyhorse.cn).
 
 MonkeyHorse is powered by many powerful frameworks and third-party projects:
 
 - Spring Boot and many of Spring familiy (e.g. Spring MVC, Spring JPA, Spring Secruity and etc)
 - Hibernate + MySQL
-- [HikariCP](https://github.com/brettwooldridge/HikariCP) - A solid high-performance JDBC connection 
-
-pool
+- [HikariCP](https://github.com/brettwooldridge/HikariCP) - A solid high-performance JDBC connection pool
 - [Bootstrap](https://getbootstrap.com) - A very popular and responsive front-end framework
 - [Pegdown](https://github.com/sirthias/pegdown) - A pure-java markdown processor
-- [ACE Editor](http://ace.c9.io/) - A high performance code editor which I use to write posts and 
-
-code.
+- [ACE Editor](http://ace.c9.io/) - A high performance code editor which I use to write posts and code.
 - [Pygments](http://pygments.org/) - A python library for highlighting code syntax
-- [Jade4j](https://github.com/neuland/jade4j) - [Jade](http://jade-lang.com/) is an elegant template 
-
-language.
-- [Webjars](http://www.webjars.org/) - A client-side web libraries packaged into JAR files. A easy 
-
-way to manage JavaScript and CSS vendors in Gradle.
+- [Jade4j](https://github.com/neuland/jade4j) - [Jade](http://jade-lang.com/) is an elegant template language.
+- [Webjars](http://www.webjars.org/) - A client-side web libraries packaged into JAR files. A easy way to manage JavaScript and CSS vendors in Gradle.
 - [Redis](http://redis.io/) - A very powerful in-memory data cache server.
 
 ## Development
@@ -60,18 +50,14 @@ View `http://localhost:8080/` on your browser.
 
 ### Todo
 
-- Handling static web resources with `ResourceSolvers` and `ResourceTransformers` introduced in 
-
-Spring Framework 4.1.
+- Handling static web resources with `ResourceSolvers` and `ResourceTransformers` introduced in Spring Framework 4.1.
 - Awesome features are always welcome.
 
 Welcome to contribute.
 
 ## Deployment
 
-- Build application jar `./gradlew build`, then upload the distribution jar (e.g. 
-
-`build/libs/SpringBlog-0.1.jar`) to your remote server.
+- Build application jar `./gradlew build`, then upload the distribution jar (e.g. `build/libs/SpringBlog-0.1.jar`) to your remote server.
 - Upload `application-production.yml` to your server and change it according to your server settings.
 - Run it (Java8 is a must)
 
@@ -81,4 +67,4 @@ Welcome to contribute.
   ```
 
 ## License
-Modified BSD license. Copyright (c) 2015, Jiankun LEI (Uoor).
+Modified BSD license. Copyright (c) 2015, Jiankun LEI (Raysmond).

@@ -1,0 +1,12 @@
+.container
+  .footer
+    .footer-wrapper
+      hr
+      p 
+        | &copy; · 2011-2015 &nbsp;
+        a(href="http://monkeyhorse.cn") MonkeyHorse
+        |  ·
+
+        if viewHelper != null
+          span  #{viewHelper.getResponseTime()}ms
+       
