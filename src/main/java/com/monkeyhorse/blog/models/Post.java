@@ -34,6 +34,7 @@ public class Post extends BaseModel{
     @Type(type="text")
     private String content;
 
+
     @Type(type = "text")
     private String renderedContent;
 

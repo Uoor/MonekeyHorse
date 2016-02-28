@@ -2,6 +2,7 @@
 .gradle
 build
 bin
+out
 scripts
 production_app.properties
 *.iml

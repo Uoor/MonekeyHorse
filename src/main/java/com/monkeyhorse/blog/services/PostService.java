@@ -191,7 +191,7 @@ public class PostService {
         if (tags == null || tags.isEmpty())
             return "";
 
-        StringBuilder names = new StringBuilder();
+        final StringBuilder names = new StringBuilder();
         tags.forEach(tag -> names.append(tag.getName()).append(","));
         names.deleteCharAt(names.length() - 1);
 

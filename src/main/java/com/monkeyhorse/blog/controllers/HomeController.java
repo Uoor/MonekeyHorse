@@ -35,7 +35,7 @@ public class HomeController {
 
     @RequestMapping(value = "about", method = GET)
     public String about(Model model) {
-        Post post = postService.getPublishedPostByPermalink(Constants.ABOUT_PAGE_PERMALINK);
+              Post post = postService.getPublishedPostByPermalink(Constants.ABOUT_PAGE_PERMALINK);
 
         if (post == null) {
             post = postService.createAboutPage();
