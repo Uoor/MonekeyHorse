@@ -67,4 +67,4 @@ Welcome to contribute.
   ```
 
 ## License
-Modified BSD license. Copyright (c) 2015, Min.Wu (Uoor).
+Modified BSD license. Copyright (c) 2015, M.Wu (MonkeyHorse).
