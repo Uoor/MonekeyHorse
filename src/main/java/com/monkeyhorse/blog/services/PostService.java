@@ -75,6 +75,29 @@ public class PostService {
             @CacheEvict(value = CACHE_NAME_PAGE, allEntries = true),
             @CacheEvict(value = CACHE_NAME_COUNTS, allEntries = true)
     })
+
+    @Cacheable(CACHE_NAME)
+    public Post getPublishedPostByPermalinkDraft(String permalink) {
+        logger.debug("Get post with permalink " + permalink);
+
+        Post post = postRepository.findByPermalinkAndPostStatus(permalink, PostStatus.DRAFT);
+
+        if (post == null) {
+            throw new NotFoundException("Post with permalink '" + permalink + "' is not found.");
+        }
+
+        return post;
+    }
+
+    @Caching(evict = {
+            @CacheEvict(value = CACHE_NAME_ARCHIVE, allEntries = true),
+            @CacheEvict(value = CACHE_NAME_PAGE, allEntries = true),
+            @CacheEvict(value = CACHE_NAME_COUNTS, allEntries = true)
+    })
+
+
+
+
     public Post createPost(Post post) {
         if (post.getPostFormat() == PostFormat.MARKDOWN) {
             post.setRenderedContent(Markdown.markdownToHtml(post.getContent()));
