@@ -12,6 +12,7 @@ import org.springframework.cache.annotation.EnableCaching;
 public class Application {
 
     public static void main(String[] args) {
+        System.out.println("会执行Application??");
         SpringApplication.run(Application.class, args);
     }
 }

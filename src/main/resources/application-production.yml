@@ -1,5 +1,6 @@
 server:
-    port: 9000
+    address: monkeyhorse.cn
+    port: 80
     contextPath:
 
 spring:
