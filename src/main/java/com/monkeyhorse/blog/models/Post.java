@@ -25,8 +25,77 @@ import java.util.Set;
 public class Post extends BaseModel{
     private static final SimpleDateFormat SLUG_DATE_FORMAT = new SimpleDateFormat("yyyy/MM/dd");
 
+   public static SimpleDateFormat getSlugDateFormat() {
+        return SLUG_DATE_FORMAT;
+    }
+
     @ManyToOne
     private User user;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public void setRenderedContent(String renderedContent) {
+        this.renderedContent = renderedContent;
+    }
+
+    public PostStatus getPostStatus() {
+        return postStatus;
+    }
+
+    public void setPostStatus(PostStatus postStatus) {
+        this.postStatus = postStatus;
+    }
+
+    public PostFormat getPostFormat() {
+        return postFormat;
+    }
+
+    public void setPostFormat(PostFormat postFormat) {
+        this.postFormat = postFormat;
+    }
+
+    public PostType getPostType() {
+        return postType;
+    }
+
+    public void setPostType(PostType postType) {
+        this.postType = postType;
+    }
+
+    public Set<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(Set<Tag> tags) {
+        this.tags = tags;
+    }
+
+    public String getPermalink() {
+        return permalink;
+    }
+
+//    public User getUser() {
+//
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     @Column(nullable = false)
     private String title;
