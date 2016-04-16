@@ -28,8 +28,9 @@ public class AdminController {
         this.appSetting = appSetting;
     }
 
-    @RequestMapping("")
+    @RequestMapping(value = "")
     public String index(){
+        System.out.println("登陆后首页");
         return "admin/home/index";
     }
 

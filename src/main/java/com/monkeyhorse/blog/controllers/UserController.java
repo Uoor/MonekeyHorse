@@ -15,8 +15,8 @@ public class UserController {
 
     @RequestMapping("signin")
     public String signin(Principal principal, RedirectAttributes ra) {
-//        principal.getName();
+//        ;
 //        principal.getClass();
-        return principal == null ? "users/signin" : "redirect:/";
+        return principal == null ? "users/signin" : "redirect:admin/";
     }
 }

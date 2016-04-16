@@ -62,7 +62,7 @@ public class PostService {
         logger.debug("Get post with permalink " + permalink);
 
         Post post = postRepository.findByPermalinkAndPostStatus(permalink, PostStatus.PUBLISHED);
-
+       // System.out.println("postRepository" + postRepository.getClass() + postRepository.toString() );
         if (post == null) {
             throw new NotFoundException("Post with permalink '" + permalink + "' is not found.");
         }

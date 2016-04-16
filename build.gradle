@@ -68,7 +68,7 @@ dependencies {
     compile 'redis.clients:jedis:2.7.3'
 
     // MySQL
-    compile 'mysql:mysql-connector-java:+'
+    compile 'mysql:mysql-connector-java:5.1.38'
 
     // Validation
     compile 'org.hibernate:hibernate-validator:+'

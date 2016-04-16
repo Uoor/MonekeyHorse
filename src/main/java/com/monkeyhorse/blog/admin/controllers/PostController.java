@@ -95,13 +95,17 @@ public class PostController {
 
     @RequestMapping(value = "", method = POST)
     public String create(Principal principal, @Valid PostForm postForm, Errors errors, Model model){
+        System.out.println("PostController-1" );
         if (errors.hasErrors()) {
+            System.out.println("PostController0" );
             model.addAttribute("postFormats", PostFormat.values());
             model.addAttribute("postStatus", PostStatus.values());
 
             return "admin/posts/new";
         } else {
             Post post = DTOUtil.map(postForm, Post.class);
+            System.out.println("PostController1" );
+            System.out.println("PostController2" + principal.getName());
             post.setUser(userRepository.findByEmail(principal.getName()));
             post.setTags(postService.parseTagNames(postForm.getPostTags()));
 

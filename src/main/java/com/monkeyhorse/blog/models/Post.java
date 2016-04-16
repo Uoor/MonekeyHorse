@@ -88,14 +88,14 @@ public class Post extends BaseModel{
         return permalink;
     }
 
-//    public User getUser() {
-//
-//        return user;
-//    }
-//
-//    public void setUser(User user) {
-//        this.user = user;
-//    }
+    public User getUser() {
+
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     @Column(nullable = false)
     private String title;

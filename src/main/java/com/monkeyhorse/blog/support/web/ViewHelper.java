@@ -11,8 +11,8 @@ import com.domingosuarez.boot.autoconfigure.jade4j.JadeHelper;
 /**
  *  @author uoor<i@monkeyhorse.cn thx raysmood>
  */
-@Service
 @JadeHelper("viewHelper")
+@Service
 public class ViewHelper {
 
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM dd, yyyy");

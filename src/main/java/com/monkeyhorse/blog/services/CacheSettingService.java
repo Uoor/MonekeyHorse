@@ -17,6 +17,7 @@ import java.io.Serializable;
 @Service
 public class CacheSettingService implements SettingService {
 
+
     private SettingRepository settingRepository;
 
     private static final String CACHE_NAME = "cache.settings";

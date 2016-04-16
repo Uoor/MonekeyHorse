@@ -18,7 +18,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService implements UserDetailsService {
 
     @Autowired
@@ -35,11 +37,13 @@ public class UserService implements UserDetailsService {
     }
 
     public User createUser(User user){
+        System.out.println("UserService-什么时候到这 User createUser");
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
     public User getSuperUser(){
+        System.out.println("UserService-什么时候到这 User getSuperUser");
         User user = userRepository.findByEmail(Constants.DEFAULT_ADMIN_EMAIL);
 
         if ( user == null) {
@@ -51,6 +55,7 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        System.out.println("UserService-什么时候到这  UserDetails loadUserByUsername");
         User user = userRepository.findByEmail(username);
         if (user == null) {
             throw new UsernameNotFoundException("user not found");
@@ -59,6 +64,7 @@ public class UserService implements UserDetailsService {
     }
 
     public User currentUser(){
+        System.out.println("UserService-什么时候到这 void currentUser");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if(auth == null || auth instanceof AnonymousAuthenticationToken){
             return null;
@@ -86,14 +92,17 @@ public class UserService implements UserDetailsService {
     }
 
     public void signin(User user) {
+        System.out.println("UserService-什么时候到这 void signin");
         SecurityContextHolder.getContext().setAuthentication(authenticate(user));
     }
 
     private Authentication authenticate(User user) {
+        System.out.println(" UserService-Authentication authenticate");
         return new UsernamePasswordAuthenticationToken(createSpringUser(user), null, Collections.singleton(createAuthority(user)));
     }
 
     private org.springframework.security.core.userdetails.User createSpringUser(User user) {
+        System.out.println(" UserService-createSpringUser");
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
                 user.getPassword(),
@@ -101,6 +110,7 @@ public class UserService implements UserDetailsService {
     }
 
     private GrantedAuthority createAuthority(User user) {
+        System.out.println("UserService-user.Role()" + user.getRole());
         return new SimpleGrantedAuthority(user.getRole());
     }
 
